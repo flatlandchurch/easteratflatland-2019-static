@@ -1,0 +1,144 @@
+.location-container {
+  width: 100%;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-row-gap: 24px;
+  grid-column-gap: 48px;
+
+  @media screen and (max-width: 960px) {
+    grid-template-columns: minmax(0, 1fr);
+    grid-row-gap: 48px;
+  }
+}
+
+.location-card {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: 150px minmax(0, 1fr);
+  grid-template-areas:
+    "image info"
+    "dates dates";
+  grid-row-gap: 16px;
+  grid-column-gap: 16px;
+  position: relative;
+
+  &:first-child::after {
+    content: "";
+    height: 100%;
+    width: 1px;
+    display: block;
+    background: #dedede;
+    position: absolute;
+    right: -24px;
+
+    @media screen and (max-width: 960px) { display: none; }
+  }
+
+  &:first-child {
+    grid-template-columns: minmax(0, 1fr) 150px;
+    grid-template-areas:
+      "info image"
+      "dates dates";
+  }
+
+  .image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.location-card .image {
+  grid-area: image;
+}
+
+.location-card .info {
+  grid-area: info;
+
+  &:first-child {
+    text-align: right;
+  }
+
+  a.cta {
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  &:first-child a.cta {
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  h3 {
+    margin: 0;
+  }
+
+  p {
+    margin: 0 0 8px;
+    font-size: 16px;
+    line-height: 18px;
+  }
+}
+
+.time-cards {
+  grid-area: dates;
+}
+
+.time-card {
+  box-shadow: 0 10px 28px -2px rgba(0, 0, 0, 0.2);
+  background: #fff;
+  width: 100%;
+  transition: box-shadow 0.2s ease-out, transform 0.2s ease-out;
+  align-items: center;
+  margin: 24px 0;
+  padding: 12px;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+
+  .date {
+    width: 50px;
+    text-align: center;
+    margin-right: 32px;
+    font-weight: 900;
+
+    p {
+      margin: 0;
+    }
+
+    p:first-child {
+      font-size: 24px;
+    }
+  }
+
+  .btn {
+    margin-left: auto;
+
+    @media screen and (max-width: 768px) {
+      margin: 0 auto;
+    }
+  }
+}
+
+.btn {
+  background: #0E0E0F;
+  color: #fff;
+  border: 0;
+  border-radius: 4px;
+  font-size: 14px;
+  padding: 8px 12px;
+
+  &:focus,
+  &:hover {
+    outline: none;
+    background: #4F4F50;
+  }
+}

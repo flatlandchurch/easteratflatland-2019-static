@@ -1,0 +1,239 @@
+h2 {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 0.8;
+  width: 100%;
+  text-align: center;
+  color: #31817C;
+  position: relative;
+  margin-bottom: 40px;
+  padding-top: 12px;
+}
+
+.red-bar {
+  background: #31817C;
+  padding: 12px;
+  margin: 0 0 48px;
+
+  h1 {
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 8px;
+
+    h1 {
+      font-size: 16px;
+    }
+  }
+}
+
+section {
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 12px 24px;
+  background: #f8f8f8;
+  margin-bottom: 56px;
+}
+
+section > div {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+section.full-width > div {
+  max-width: 1200px;
+}
+
+.cross-container {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-rows: auto;
+}
+
+.cross {
+  height: 48px;
+  position: relative;
+  width: 100%;
+
+  &::before,
+  &::after {
+    width: 10px;
+    height: 2px;
+    content: "";
+    display: block;
+    left: calc(50% - 5px);
+    background: #D63C1F;
+    top: 0;
+    position: absolute;
+  }
+
+  &::before {
+    transform: rotate(90deg);
+  }
+}
+
+.parallax {
+  position: relative;
+  height: 500px;
+  margin: 42px 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  box-shadow: inset -2px 0 48px rgba(0,0,0,0.7);
+
+  .bg {
+    top: -50px;
+    right: -50px;
+    bottom: -50px;
+    left: -50px;
+    position: absolute;
+    transform: translateZ(-1px) scale(1.5);
+    background-size: cover;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-position: center -250px;
+
+    @media screen and (max-width: 1300px) {
+      background-position: center -50px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    height: 320px;
+
+    .bg {
+      background-position: center 0;
+    }
+  }
+}
+
+.parallax .video-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.video-container video {
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.bg-jesus {
+  background-color: #E9E9C7;
+  background-image: url('https://images.unsplash.com/photo-1503562716060-e3f2c7ba24aa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2106&q=80');
+}
+
+.bg-bart {
+  background-color: #D63C1F;
+  background-image: url('https://c1.staticflickr.com/5/4886/46015154812_bc2efc3dbf_k.jpg');
+}
+
+.bg-heaven {
+  background-color: #2B288C;
+  background-image: url('https://live.staticflickr.com/976/40908318005_6273f274f0_h.jpg');
+}
+
+.schedule-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-rows: auto;
+  grid-row-gap: 2rem;
+  grid-column-gap: 2rem;
+  padding-bottom: 40px;
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.schedule-card {
+  box-shadow: 0 10px 28px -2px rgba(0, 0, 0, 0.2);
+  background: #fff;
+  width: 100%;
+  display: flex;
+  transition: box-shadow 0.2s ease-out, transform 0.2s ease-out;
+  align-items: center;
+
+  &:hover {
+    box-shadow: 0 14px 40px -2px rgba(0, 0, 0, 0.17);
+    transform: scale(1.009)
+  }
+
+  .image {
+    width: 120px;
+    overflow: hidden;
+    height: 120px;
+    position: relative;
+  }
+
+  .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .info {
+    margin-left: 12px;
+    padding: 8px 0;
+
+    h3 {
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+
+    h3, p {
+      margin: 0;
+    }
+  }
+}
+
+.pills {
+  width: 100%;
+  display: flex;
+  margin: 8px 0;
+
+  & > div {
+    background: #757580;
+    text-transform: uppercase;
+    white-space: pre-wrap;
+    margin: 0 5px 0 0;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+    height: 16px;
+    max-height: 16px;
+    min-width: 12px;
+    border-radius: 4px;
+    min-height: 1em;
+    padding: 3px 7px 2px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: none;
+    color: #fff;
+  }
+}
+
+.center {
+  text-align: center;
+}
